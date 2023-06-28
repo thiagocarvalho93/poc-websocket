@@ -6,13 +6,10 @@ namespace server_mvc.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class WeatherForecastController : ControllerBase
+public class WebsocketController : ControllerBase
 {
-    private readonly ILogger<WeatherForecastController> _logger;
-
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
+    public WebsocketController()
     {
-        _logger = logger;
     }
 
     [Route("/ws")]
