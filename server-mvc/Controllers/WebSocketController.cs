@@ -36,19 +36,23 @@ public class WebsocketController : ControllerBase
             new AutorizacaoPendente()
             {
                 Autorizadores = new List<string>{"thiagopaes.dsn.erp","marina.dsn.erp"},
-                Dados = "Autorização 1",
+                Dados = "Autorizacao 1",
             },
             new AutorizacaoPendente()
             {
                 Autorizadores = new List<string>{"thiagopaes.dsn.erp"},
-                Dados = "Autorização 2"
+                Dados = "Autorizacao 2"
             },
         };
         // Filtrando as autorizações relativas ao usuário passado
         var dadosFiltrados = lista.Where(x => x.Autorizadores.Contains(user)).ToList();
-        
+
         // Tratando o objeto para mandar para o front
-        var objetoResponse = dadosFiltrados.Select(x => x.Dados).ToList();
+        var objetoResponse = new Response
+        {
+            Autorizacoes = dadosFiltrados.Select(x => x.Dados).ToList(),
+            User = user
+        };
 
         while (webSocket.State == WebSocketState.Open)
         {
