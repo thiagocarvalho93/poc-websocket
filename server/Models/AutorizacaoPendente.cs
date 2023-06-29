@@ -1,4 +1,4 @@
-namespace server_mvc.Controllers
+namespace Server.Models
 {
     internal class AutorizacaoPendente
     {

@@ -2,8 +2,9 @@ using System.Net.WebSockets;
 using System.Text;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
+using Server.Models;
 
-namespace server_mvc.Controllers;
+namespace Server.Controllers;
 
 [ApiController]
 [Route("[controller]")]
